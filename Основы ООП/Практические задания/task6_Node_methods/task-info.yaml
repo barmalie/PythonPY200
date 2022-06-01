@@ -9,61 +9,61 @@ files:
 - name: main.py
   visible: true
   placeholders:
-  - offset: 410
-    length: 77
+  - offset: 412
+    length: 124
     placeholder_text: '...  # TODO добавить атрибуты'
     initial_state:
-      length: 29
-      offset: 371
+      length: 77
+      offset: 410
     initialized_from_dependency: false
     selected: true
-    status: Unchecked
+    status: Solved
     encrypted_possible_answer: |-
       self.value = value
               self.next = next_
-  - offset: 593
-    length: 30
+  - offset: 642
+    length: 54
     placeholder_text: '...  # TODO вернуть значение узла'
     initial_state:
-      length: 33
-      offset: 506
+      length: 30
+      offset: 593
     initialized_from_dependency: false
-    selected: false
-    status: Unchecked
+    selected: true
+    status: Solved
     encrypted_possible_answer: return self.value
-  - offset: 629
-    length: 30
+  - offset: 702
+    length: 96
     placeholder_text: '# TODO добавить метод get_next'
     initial_state:
       length: 30
-      offset: 545
+      offset: 629
     initialized_from_dependency: false
-    selected: false
-    status: Unchecked
+    selected: true
+    status: Solved
     encrypted_possible_answer: |-
       def get_next(self) -> Optional["Node"]:
               """Метод, который возвращает значение атрибута next"""
               return self.next
-  - offset: 775
+  - offset: 980
     length: 57
     placeholder_text: '# TODO с помощью метода распечатать значение первого узла'
     initial_state:
       length: 57
-      offset: 691
+      offset: 775
     initialized_from_dependency: false
     selected: false
-    status: Unchecked
+    status: Solved
     encrypted_possible_answer: print(first_node.get_value())
-  - offset: 837
+  - offset: 1042
     length: 64
     placeholder_text: '# TODO  с помощью метода распечатать следующий узел второго
       узла'
     initial_state:
       length: 64
-      offset: 753
+      offset: 837
     initialized_from_dependency: false
     selected: false
-    status: Unchecked
+    status: Solved
     encrypted_possible_answer: print(second_node.get_next())
   text: |
     from typing import Any, Optional
@@ -97,5 +97,8 @@ files:
 - name: __init__.py
   visible: false
   learner_created: false
-status: Unchecked
+status: Solved
+feedback:
+  message: Congratulations!
+  time: Wed, 01 Jun 2022 16:55:57 UTC
 record: -1
