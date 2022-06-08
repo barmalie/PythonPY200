@@ -49,6 +49,10 @@ class LinkedList:
 
         return current_node
 
+    def __len__(self):
+        print("Вызван метод \"__len__\"")
+        return self.len
+
     def __getitem__(self, index: int) -> Any:
         """ Метод возвращает значение узла по указанному индексу. """
         print("Вызван метод \"__getitem__\"")
@@ -58,9 +62,9 @@ class LinkedList:
     def __str__(self) -> str:
         return f"{[node for node in self]}"
 
-    def __len__(self):
-        print("Вызван метод \"__len__\"")
-        return self.len
+    # def __len__(self):
+    #     print("Вызван метод \"__len__\"")
+    #     return self.len
 
 
 if __name__ == '__main__':
