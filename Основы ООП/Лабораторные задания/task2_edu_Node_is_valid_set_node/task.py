@@ -19,7 +19,7 @@ class Node:
 
     def is_valid(self, node: Any) -> None:
        # TODO метод проверки корректности связываемого узла
-       if not isinstance(self.next, node):
+       if not isinstance(node, Node):
            raise TypeError
 
     def set_next(self, next_: Optional["Node"] = None) -> None:

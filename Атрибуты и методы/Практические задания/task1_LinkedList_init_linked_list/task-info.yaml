@@ -19,7 +19,7 @@ files:
     selected: true
     status: Unchecked
     encrypted_possible_answer: '[Node(value) for value in data]'
-  - offset: 544
+  - offset: 733
     length: 46
     placeholder_text: '# TODO составьте алгоритм, который свяжет узлы'
     initial_state:
@@ -33,7 +33,7 @@ files:
                   current_node = self.list_nodes[i]
                   next_node = self.list_nodes[i + 1]
                   self.linked_nodes(current_node, next_node)
-  - offset: 593
+  - offset: 782
     length: 17
     placeholder_text: '# TODO каким должен быть этот метод?'
     initial_state:
