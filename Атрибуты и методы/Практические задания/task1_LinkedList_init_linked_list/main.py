@@ -12,11 +12,12 @@ class LinkedList:
 
     def init_linked_list(self, data: Iterable):
         """ Метод, который создает вспомогательный список и связывает в нём узлы. """
-        self.list_nodes = ...  # TODO обернуть все значения в класс Node и поместить их в python список
+        self.list_nodes = [Node(value) for value in data]  # TODO обернуть все значения в класс Node и поместить их в python список
 
         # TODO составьте алгоритм, который свяжет узлы
 
-    # TODO каким должен быть этот метод?
+
+    @staticmethod
     def linked_nodes(left_node: Node, right_node: Optional[Node] = None) -> None:
         """
         Функция, которая связывает между собой два узла.
@@ -24,7 +25,7 @@ class LinkedList:
         :param left_node: Левый или предыдущий узел
         :param right_node: Правый или следующий узел
         """
-        left_node.set_next(right_node)
+        left_node.set_next(right_node) # связка двух узлов.
 
     def __str__(self) -> str:
         return str(self.list_nodes)

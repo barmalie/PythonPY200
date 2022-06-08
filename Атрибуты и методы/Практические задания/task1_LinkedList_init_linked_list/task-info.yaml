@@ -9,17 +9,17 @@ files:
   visible: true
   placeholders:
   - offset: 429
-    length: 77
+    length: 105
     placeholder_text: '...  # TODO обернуть все значения в класс Node и поместить
       их в python список'
     initial_state:
       length: 77
       offset: 429
     initialized_from_dependency: false
-    selected: false
+    selected: true
     status: Unchecked
     encrypted_possible_answer: '[Node(value) for value in data]'
-  - offset: 516
+  - offset: 544
     length: 46
     placeholder_text: '# TODO составьте алгоритм, который свяжет узлы'
     initial_state:
@@ -33,14 +33,14 @@ files:
                   current_node = self.list_nodes[i]
                   next_node = self.list_nodes[i + 1]
                   self.linked_nodes(current_node, next_node)
-  - offset: 568
-    length: 36
+  - offset: 593
+    length: 17
     placeholder_text: '# TODO каким должен быть этот метод?'
     initial_state:
       length: 36
       offset: 568
     initialized_from_dependency: false
-    selected: false
+    selected: true
     status: Unchecked
     encrypted_possible_answer: '@staticmethod'
   text: |
