@@ -11,7 +11,7 @@ files:
   visible: true
   placeholders:
   - offset: 1740
-    length: 160
+    length: 162
     placeholder_text: '# TODO реализовать магический метод __setitem__'
     initial_state:
       length: 47
@@ -24,8 +24,8 @@ files:
               """ Метод устанавливает значение узла по указанному индексу. """
               node = self.step_by_step_on_nodes(index)
               node.value = value
-  - offset: 2299
-    length: 44
+  - offset: 2300
+    length: 46
     placeholder_text: '# TODO установить элементу с индексом 1 значение 100'
     initial_state:
       length: 52
