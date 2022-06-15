@@ -12,9 +12,10 @@ class Node:
         """
         self.value = value
 
-        # TODO заменить на вызов setter
+        # # TODO заменить на вызов setter
         self.next = None
         self.set_next(next_)
+        self.next = next_
 
     def __repr__(self) -> str:
         return f"Node({self.value}, {None})" if self.next is None else f"Node({self.value}, Node({self.next}))"
@@ -26,6 +27,15 @@ class Node:
         if not isinstance(node, (type(None), Node)):
             raise TypeError
 
+    @property
+    def next(self):
+        return self.__next
+
+    @next.setter
+    def next(self, value):
+        print("вызван setter")
+        self.is_valid(value)
+        self.__next = value
     # TODO заменить на getter и setter
     def set_next(self, next_: Optional["Node"] = None) -> None:
         self.is_valid(next_)

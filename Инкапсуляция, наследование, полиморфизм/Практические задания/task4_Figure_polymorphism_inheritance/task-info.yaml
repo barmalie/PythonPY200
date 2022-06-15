@@ -83,7 +83,7 @@ files:
 status: Failed
 feedback:
   message: Incorrect
-  time: Wed, 15 Jun 2022 15:25:41 UTC
+  time: Wed, 15 Jun 2022 15:27:51 UTC
   expected: |
     Вызван метод класса Figure
     Вызван метод класса Rectangle
