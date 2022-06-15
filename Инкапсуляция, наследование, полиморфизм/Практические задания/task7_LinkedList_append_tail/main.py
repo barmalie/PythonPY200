@@ -8,7 +8,7 @@ class LinkedList:
         """Конструктор связного списка"""
         self.len = 0
         self.head: Optional[Node] = None
-        ...  # TODO добавить атрибут tail
+        self.tail: Optional[Node] = None # TODO добавить атрибут tail
 
         if data is not None:
             for value in data:
@@ -19,12 +19,12 @@ class LinkedList:
         append_node = Node(value)
 
         if self.head is None:
-            self.head = append_node  # TODO добавить использование self.tail
+            self.head = self.tail = append_node  # TODO добавить использование self.tail
         else:
-            last_index = self.len - 1  # TODO Переделать через атрибут tail
-            last_node = self.step_by_step_on_nodes(last_index)
-
+            #last_index = self.len - 1  # TODO Переделать через атрибут tail
+            last_node = self.tail# добавить  tail после self step_by_step_on_nodes(last_index)
             self.linked_nodes(last_node, append_node)
+            self.tail = append_node
 
         self.len += 1
 
