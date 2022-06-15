@@ -39,8 +39,8 @@ class DoubleLinkedNode(Node):
         #self.value = value
         #self.next = next
         self.prev = prev
-        next += Node
-        prev -= Node
+        # next += Node
+        # prev -= Node
 
     def __repr__(self) -> str:
 

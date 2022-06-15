@@ -16,7 +16,7 @@ class LinkedList:
 
     def append(self, value: Any):
         """ Добавление элемента в конец связного списка. """
-        append_node = Node(value)
+        append_node = Node(value)#double
 
         if self.head is None:
             self.head = self.tail = append_node
@@ -48,7 +48,7 @@ class LinkedList:
         :param left_node: Левый или предыдущий узел
         :param right_node: Правый или следующий узел
         """
-        left_node.next = right_node
+        left_node.next = right_node # еще одна строка апри помощи метода супер
 
     def __getitem__(self, index: int) -> Any:
         """ Метод возвращает значение узла по указанному индексу. """
@@ -63,7 +63,7 @@ class LinkedList:
     def to_list(self) -> list:
         return [linked_list_value for linked_list_value in self]
 
-    def __repr__(self) -> str:
+    def __repr__(self) -> str:# наследуем
         return f"{self.__class__.__name__}({self.to_list()})"
 
     def __str__(self) -> str:
