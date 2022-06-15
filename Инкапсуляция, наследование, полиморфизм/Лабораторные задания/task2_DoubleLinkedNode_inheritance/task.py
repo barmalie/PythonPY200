@@ -14,6 +14,7 @@ class Node:
         self.next = next_  # вызовется setter
 
     def __repr__(self) -> str:
+        # next_repr = str(None) if self.next is None else f"DoublincedNode{self.next.value},{None},{None}"
         return f"Node({self.value}, {None})" if self.next is None else f"Node({self.value}, Node({self.next}))"
 
     def __str__(self) -> str:
@@ -32,4 +33,49 @@ class Node:
         self.is_valid(next_)
         self._next = next_
 
-# TODO реализовать класс DoubleLinkedNode
+class DoubleLinkedNode(Node):
+    def __init__(self, value, next=None, prev=None):
+        super().__init__(value,next)
+        #self.value = value
+        #self.next = next
+        self.prev = prev
+        next += Node
+        prev -= Node
+
+    def __repr__(self) -> str:
+
+        next_repr = str(None) if self.next is None else f"DoublinkedNode{self.next.value},{None},{None}"
+        last_repr = str(None) if self.prev is None else f"DoublinkedNode{self.prev.value},{None},{None}"
+        # return f"Node({self.value}, {None})" if self.next and self.prev is None else f"Node({self.value}, Node({self.next}))"
+        return f"DoubleLinkedNode({self.value},{next_repr},{last_repr})"
+
+    # +репр перегружаем
+    def __str__(self) -> str:
+        return str(self.value)
+
+
+    # +стр наследуем
+
+    @classmethod
+    def is_valid(cls, node: Any) -> None:
+        if not isinstance(node, (type(None), Node)):
+            raise TypeError
+
+    # +из валид перзагружаем , делаем через метод класс в classmethod
+
+    @property
+    def next(self):
+        return self.next, self.prev
+
+    @next.setter
+    def next(self, next_: Optional["Node"], prev: Optional["Node"]):
+        self.is_valid(next_)
+        self.next = next
+        self.prev = prev
+
+    # +геттеры и сеттеры наследуются
+
+    # +prev  по образу и подобию некста
+
+
+(DoubleLinkedNode(4, None, None))
