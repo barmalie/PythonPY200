@@ -47,15 +47,4 @@ if __name__ == '__main__':
     ll.write()
 
 
-# class SimpleFileDriver(IStructureDriver):
-#     def __init__(self, filename):
-#         self.filename = filename
-#
-#     def read(self) -> Iterable:# TODO реализовать метод чтения данных из файла
-#         with open(self.filename) as f:
-#             return [int(value.rstrip()) for value in f]
-#
-#     def write(self, data: Iterable) -> None:# TODO реализовать метод записи в файл построчно
-#         with open(self.filename, "w") as f:
-#             for value in data:
-#                 f.write(str(value) + "\n")
+

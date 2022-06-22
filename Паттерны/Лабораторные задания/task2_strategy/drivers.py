@@ -47,12 +47,13 @@ class JsonFileDriver(IStructureDriver):
 
     def read(self) -> Iterable:
         with open(self.json_filename) as f:
-            return [list(value.rstrip()) for value in f]
+            input_ =json.load(f)
+        return input_
 
     def write(self, data: Iterable) -> None:
-        with open(self.json_filename, "w") as f:
-            for value in data:
-                f.write(list(value) + "\n")
+        data = [value for value in data]
+        with open(self.json_filename, 'w') as file:
+            json.dump(data, file)
 
 
 if __name__ == '__main__':

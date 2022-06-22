@@ -238,7 +238,7 @@ files:
   visible: true
   placeholders:
   - offset: 1172
-    length: 425
+    length: 426
     placeholder_text: '# TODO'
     dependency:
       section: Паттерны
