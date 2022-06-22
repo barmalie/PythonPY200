@@ -4,14 +4,14 @@ from typing import Any, Optional
 class Node:
     """ Класс, который описывает узел связного списка. """
 
-    def __init__(self, value: Any, next_: Optional["Node"] = None):
+    def __init__(self, value: Any, next: Optional["Node"] = None):
         """
         Создаем новый узел для односвязного списка
         :param value: Любое значение, которое помещено в узел
         :param next_: следующий узел, если он есть
         """
         self.value = value
-        self.next = next_  # вызовется setter
+        self.next = next  # вызовется setter
 
     def __repr__(self) -> str:
         # next_repr = str(None) if self.next is None else f"DoublincedNode{self.next.value},{None},{None}"
@@ -26,16 +26,16 @@ class Node:
 
     @property
     def next(self):
-        return self._next
+        return self.next
 
     @next.setter
     def next(self, next_: Optional["Node"]):
         self.is_valid(next_)
-        self._next = next_
+        self.next = next
 
 class DoubleLinkedNode(Node):
     def __init__(self, value, next=None, prev=None):
-        super().__init__(value,next)
+        super().__init__(value, next)
         #self.value = value
         #self.next = next
         self.prev = prev
@@ -78,4 +78,4 @@ class DoubleLinkedNode(Node):
     # +prev  по образу и подобию некста
 
 
-(DoubleLinkedNode(4, None, None))
+(DoubleLinkedNode(2, None, None))

@@ -26,7 +26,7 @@ class LinkedList:
 
         self.len += 1
 
-    def step_by_step_on_nodes(self, index: int) -> Node:
+    def step_by_step_on_nodes(self, index: int) -> Node: #в сегда начинает с головы!!!!
         """ Функция выполняет перемещение по узлам до указанного индекса. И возвращает узел. """
         if not isinstance(index, int):
             raise TypeError()
