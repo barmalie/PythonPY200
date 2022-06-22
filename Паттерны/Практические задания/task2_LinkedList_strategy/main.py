@@ -5,17 +5,22 @@ from drivers import IStructureDriver
 from factory_method import SimpleFileFactoryMethod
 
 
-class LinkedListWithDriver(...):  # TODO наследовать класс LinkedList
+class LinkedListWithDriver(LinkedList):  # TODO наследовать класс LinkedList
     def __init__(self, data: Iterable = None, driver: IStructureDriver = None):
-        ...  # TODO расширяем конструктор, чтобы в связном списке был driver
+        super().__init__(data)
+        self.driver = driver# TODO расширяем конструктор, чтобы в связном списке был driver
 
     def read(self):
         """ С помощью драйвера считать данные и поместить их в LinkedList. """
-        ...  # TODO считать данные из драйвера
+        self.clear()# TODO считать данные из драйвера
+        data = self.driver.read()
+        for value in data:
+            self.append(value)
 
     def write(self):
         """ С помощью драйвера записать данные из LinkedList. """
-        ...  # TODO записать данные с помощью драйвера
+        self.driver.write(self)# TODO записать данные с помощью драйвера
+
 
 
 if __name__ == '__main__':

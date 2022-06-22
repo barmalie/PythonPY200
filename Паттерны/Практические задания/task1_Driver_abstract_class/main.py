@@ -28,7 +28,7 @@ class SimpleFileDriver(IStructureDriver):
 
     def read(self) -> Iterable:# TODO реализовать метод чтения данных из файла
         with open(self.filename) as f:
-            return [value.rstrip() for value in f]
+            return [int(value.rstrip()) for value in f]
 
     def write(self, data: Iterable) -> None:# TODO реализовать метод записи в файл построчно
         with open(self.filename, "w") as f:
