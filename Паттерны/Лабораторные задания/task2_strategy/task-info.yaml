@@ -331,8 +331,8 @@ files:
 - name: factory_method.py
   visible: true
   placeholders:
-  - offset: 643
-    length: 107
+  - offset: 641
+    length: 106
     placeholder_text: '#'
     dependency:
       section: Паттерны
@@ -397,6 +397,6 @@ files:
   learner_created: true
 status: Solved
 feedback:
-  time: Wed, 22 Jun 2022 17:38:33 UTC
+  time: Wed, 22 Jun 2022 17:51:00 UTC
 record: -1
 post_submission_on_open: true
