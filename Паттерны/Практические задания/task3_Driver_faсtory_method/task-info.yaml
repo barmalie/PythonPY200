@@ -8,8 +8,8 @@ files:
 - name: main.py
   visible: true
   placeholders:
-  - offset: 92
-    length: 128
+  - offset: 0
+    length: 788
     placeholder_text: '# TODO Реализовать абстрактный класс'
     initial_state:
       length: 36
@@ -23,8 +23,8 @@ files:
           @abstractmethod
           def get_driver(cls) -> IStructureDriver:
               ...
-  - offset: 687
-    length: 96
+  - offset: 0
+    length: 788
     placeholder_text: '...  # TODO с помощью фабричного метода инциализировать драйвер'
     initial_state:
       length: 63
