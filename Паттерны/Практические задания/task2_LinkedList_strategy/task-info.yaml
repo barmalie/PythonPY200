@@ -65,35 +65,35 @@ files:
     status: Solved
     encrypted_possible_answer: self.driver.write(self)
   - offset: 880
-    length: 56
+    length: 75
     placeholder_text: '...  # TODO инициализировать пустой LinkedListWithDriver'
     initial_state:
       length: 56
       offset: 709
     initialized_from_dependency: false
-    selected: false
+    selected: true
     status: Solved
     encrypted_possible_answer: LinkedListWithDriver()
-  - offset: 988
-    length: 48
+  - offset: 1007
+    length: 134
     placeholder_text: '# TODO инициализировать драйвер и считать данные'
     initial_state:
       length: 48
       offset: 817
     initialized_from_dependency: false
-    selected: false
+    selected: true
     status: Solved
     encrypted_possible_answer: |-
       ll.driver = SimpleFileFactoryMethod.get_driver()
           ll.read()
-  - offset: 1105
-    length: 41
+  - offset: 1210
+    length: 101
     placeholder_text: '# TODO заменить драйвер и записать данные'
     initial_state:
       length: 41
       offset: 934
     initialized_from_dependency: false
-    selected: false
+    selected: true
     status: Solved
     encrypted_possible_answer: |-
       ll.driver = SimpleFileFactoryMethod.get_driver()
@@ -362,6 +362,9 @@ files:
         driver = SimpleFileFactoryMethod.get_driver()
         print(driver)
   learner_created: false
+- name: ford.txt
+  visible: true
+  learner_created: true
 status: Solved
 record: -1
 post_submission_on_open: true

@@ -24,10 +24,15 @@ class LinkedListWithDriver(LinkedList):  # TODO наследовать клас�
 
 
 if __name__ == '__main__':
-    ll = ...  # TODO инициализировать пустой LinkedListWithDriver
+    ll = LinkedListWithDriver()  # TODO инициализировать пустой LinkedListWithDriver
     print("Считать данные из файла input.txt")
-    # TODO инициализировать драйвер и считать данные
+    driver_1 = SimpleFileFactoryMethod.get_driver()
+    ll.driver = driver_1
+    ll.read()# TODO инициализировать драйвер и считать данные
     print(ll)
 
     print("Записать данные в файл по умолчанию")
-    # TODO заменить драйвер и записать данные
+    driver_2 = SimpleFileFactoryMethod.get_driver()
+    ll.driver = driver_2
+    ll.write()
+    print(ll)
