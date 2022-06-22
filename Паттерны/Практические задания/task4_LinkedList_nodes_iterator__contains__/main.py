@@ -50,10 +50,10 @@ class LinkedList:
         """
         left_node.next = right_node
 
-    def __getitem__(self, index: int) -> Any:
+    def __getitem__(self, index: int) -> Any:# всегда начинает с головы
         """ Метод возвращает значение узла по указанному индексу. """
         print("Вызван метод \"__getitem__\"")
-        node = self.step_by_step_on_nodes(index)
+        node = self.step_by_step_on_nodes(index)#!!! из-за него
         return node.value
 
     def __setitem__(self, index: int, value: Any) -> None:
@@ -71,9 +71,19 @@ class LinkedList:
         return f"{self.to_list()}"
 
     def nodes_iterator(self) -> Iterator[Node]:
-        ...  # TODO функция-генератор для перебора всех узлов
+        current_node = self.head
+        for _ in range(self.len):
+        #цикл for когда знаем количество узлов while когда не знаем
+            yield current_node
+            current_node = current_node.next# TODO функция-генератор для перебора всех узлов
 
-    # TODO определить метод __contains__
+    def __contains__(self, item):# TODO определить метод __contains__
+        print("вызван метод конт")
+        for node in self.nodes_iterator():
+            if node.value == item:
+                return True
+
+        return False
 
 
 if __name__ == '__main__':
