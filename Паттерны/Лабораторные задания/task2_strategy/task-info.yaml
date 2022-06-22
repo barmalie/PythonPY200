@@ -16,7 +16,7 @@ files:
 - name: main.py
   visible: true
   placeholders:
-  - offset: 563
+  - offset: 536
     length: 44
     placeholder_text: '# TODO свойство для driver (getter + setter)'
     initial_state:
@@ -33,7 +33,7 @@ files:
           @driver.setter
           def driver(self, driver: IStructureDriver):
               self._driver = driver
-  - offset: 1079
+  - offset: 1171
     length: 45
     placeholder_text: '...  # TODO инициализировать SimpleFileDriver'
     initial_state:
@@ -43,7 +43,7 @@ files:
     selected: false
     status: Solved
     encrypted_possible_answer: SimpleFileFactoryMethod.get_driver()
-  - offset: 1217
+  - offset: 1323
     length: 43
     placeholder_text: '...  # TODO инициализировать JsonFileDriver'
     initial_state:
@@ -238,7 +238,7 @@ files:
   visible: true
   placeholders:
   - offset: 1172
-    length: 400
+    length: 425
     placeholder_text: '# TODO'
     dependency:
       section: Паттерны

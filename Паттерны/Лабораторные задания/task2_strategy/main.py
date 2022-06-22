@@ -15,24 +15,25 @@ class LinkedListWithDriver(LinkedList):
         return self.__next
 
     @next.setter
-    def next(self, value):
+    def next(self, driver):
         print("вызван setter")
-        self.is_valid(value)
-        self.__next = value
-
+        self._driver = driver
     # TODO свойство для driver (getter + setter)
 
     def read(self):
         """ С помощью драйвера считать данные и поместить их в LinkedList. """
         data_from_driver = self.driver.read()
-
         for value in data_from_driver:
             self.append(value)
 
+
+
     def write(self):
         """ С помощью драйвера записать данные из LinkedList. """
-        self.driver.write(self)
-
+        #self.driver.write(self)
+        with open(self.filename, "w") as f:
+            for value in data:
+                f.write(str(value) + "\n")
 
 if __name__ == '__main__':
     ll = LinkedListWithDriver()
@@ -41,9 +42,20 @@ if __name__ == '__main__':
     ll.read()
     print(ll)
 
-    driver_2 = JsonFileDrive.get_driver()
+    driver_2 = JsonFileDriverFactoryMethod.get_driver()
     ll.driver = driver_2  # TODO инициализировать JsonFileDriver
     ll.write()
 
 
-
+# class SimpleFileDriver(IStructureDriver):
+#     def __init__(self, filename):
+#         self.filename = filename
+#
+#     def read(self) -> Iterable:# TODO реализовать метод чтения данных из файла
+#         with open(self.filename) as f:
+#             return [int(value.rstrip()) for value in f]
+#
+#     def write(self, data: Iterable) -> None:# TODO реализовать метод записи в файл построчно
+#         with open(self.filename, "w") as f:
+#             for value in data:
+#                 f.write(str(value) + "\n")
