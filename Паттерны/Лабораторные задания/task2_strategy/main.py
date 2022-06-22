@@ -10,6 +10,16 @@ class LinkedListWithDriver(LinkedList):
         super().__init__(data)
         self.driver = driver
 
+    # @property
+    # def next(self):
+    #     return self.__next
+    #
+    # @next.setter
+    # def next(self, value):
+    #     print("вызван setter")
+    #     self.is_valid(value)
+    #     self.__next = value
+
     # TODO свойство для driver (getter + setter)
 
     def read(self):
@@ -26,9 +36,14 @@ class LinkedListWithDriver(LinkedList):
 
 if __name__ == '__main__':
     ll = LinkedListWithDriver()
-    ll.driver = ...  # TODO инициализировать SimpleFileDriver
+    driver_1 = SimpleFileFactoryMethod.get_driver()
+    ll.driver = driver_1  # TODO инициализировать SimpleFileDriver
     ll.read()
     print(ll)
 
-    ll.driver = ...  # TODO инициализировать JsonFileDriver
+    driver_2 = JsonFileDrive.get_driver()
+    ll.driver = driver_2  # TODO инициализировать JsonFileDriver
     ll.write()
+
+
+

@@ -23,7 +23,7 @@ class SimpleFileFactoryMethod(DriverFactoryMethod):
         return SimpleFileDriver(filename)
 
 
-#
+class JsonFileDriverFactoryMethod(DriverFactoryMethod):# TODO реализовать класс JsonFileDriveFactoryMethod
 
 
 if __name__ == '__main__':

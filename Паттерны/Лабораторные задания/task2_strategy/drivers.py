@@ -41,7 +41,18 @@ class SimpleFileDriver(IStructureDriver):
         return f"{self.__class__.__name__}(\"{self.filename}\")"
 
 
-# TODO
+class JsonFileDriver(SimpleFileDriver):
+    def __init__(self, filename):
+        self.filename = filename
+
+    def read(self) -> Iterable:# TODO реализовать метод чтения данных из файла
+        with open(self.filename) as f:
+            return [list(value.rstrip()) for value in f]
+
+    def write(self, data: Iterable) -> None:# TODO реализовать метод записи в файл построчно
+        with open(self.filename, "w") as f:
+            for value in data:
+                f.write(list(value) + "\n")
 
 
 if __name__ == '__main__':
