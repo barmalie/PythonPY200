@@ -45,11 +45,11 @@ class JsonFileDriver(SimpleFileDriver):
     def __init__(self, filename):
         self.filename = filename
 
-    def read(self) -> Iterable:# TODO реализовать метод чтения данных из файла
+    def read(self) -> Iterable:
         with open(self.filename) as f:
             return [list(value.rstrip()) for value in f]
 
-    def write(self, data: Iterable) -> None:# TODO реализовать метод записи в файл построчно
+    def write(self, data: Iterable) -> None:
         with open(self.filename, "w") as f:
             for value in data:
                 f.write(list(value) + "\n")

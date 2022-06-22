@@ -238,7 +238,7 @@ files:
   visible: true
   placeholders:
   - offset: 1172
-    length: 495
+    length: 400
     placeholder_text: '# TODO'
     dependency:
       section: Паттерны
@@ -251,7 +251,7 @@ files:
       length: 6
       offset: 1172
     initialized_from_dependency: true
-    selected: false
+    selected: true
     status: Solved
     encrypted_possible_answer: |-
       class JsonFileDriver(IStructureDriver):
