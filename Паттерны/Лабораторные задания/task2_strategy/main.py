@@ -10,15 +10,15 @@ class LinkedListWithDriver(LinkedList):
         super().__init__(data)
         self.driver = driver
 
-    # @property
-    # def next(self):
-    #     return self.__next
-    #
-    # @next.setter
-    # def next(self, value):
-    #     print("вызван setter")
-    #     self.is_valid(value)
-    #     self.__next = value
+    @property
+    def next(self):
+        return self.__next
+
+    @next.setter
+    def next(self, value):
+        print("вызван setter")
+        self.is_valid(value)
+        self.__next = value
 
     # TODO свойство для driver (getter + setter)
 

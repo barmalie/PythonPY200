@@ -4,7 +4,7 @@ files:
   visible: true
   placeholders:
   - offset: 1172
-    length: 495
+    length: 473
     placeholder_text: '# TODO Реализовать класс JsonFileDriver'
     initial_state:
       length: 39
@@ -87,5 +87,7 @@ files:
   visible: false
   learner_created: false
 status: Solved
+feedback:
+  time: Wed, 22 Jun 2022 17:33:25 UTC
 record: -1
 post_submission_on_open: true

@@ -42,15 +42,15 @@ class SimpleFileDriver(IStructureDriver):
 
 
 class JsonFileDriver(SimpleFileDriver):
-    def __init__(self, filename):
-        self.filename = filename
+    def __init__(self, jsonfilename):
+        self.filename = jsonfilename
 
     def read(self) -> Iterable:# TODO реализовать метод чтения данных из файла
-        with open(self.filename) as f:
-            return [list(value.rstrip()) for value in f]
+        with open(self.jsonfilename) as f:
+            return
 
     def write(self, data: Iterable) -> None:# TODO реализовать метод записи в файл построчно
-        with open(self.filename, "w") as f:
+        with open(self.jsonfilename, "w") as f:
             for value in data:
                 f.write(list(value) + "\n")
 
