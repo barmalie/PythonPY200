@@ -3,7 +3,7 @@ import unittest
 from task import Node
 
 
-class TestCase(...):  # TODO наследоваться от unittest.TestCase
+class TestCase(unittest):  # TODO наследоваться от unittest.TestCase
     def test_init_node_without_next(self):
         """Проверить следующий узел после инициализации с аргументом next_ по умолчанию"""
         ...  # TODO с помощью метода assertIsNone проверить следующий узел
