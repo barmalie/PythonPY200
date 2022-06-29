@@ -34,10 +34,18 @@ class TestCase(unittest.TestCase):
     def test_str(self):
         some_value = 5
         node = Node(some_value)
+        #actual_value = some_value
+        expected_value = str(some_value)
+        self.assertEqual(expected_value, str(node))
+        self.assertEqual(expected_value, f"{node}")
 
         # TODO проверить строковое представление
 
     def test_is_valid(self):
-        ...  # TODO проверить метод is_valid при корректных узлах
+        Node.is_valid(Node(5))  # TODO проверить метод is_valid при корректных узлах
+        Node.is_valid(None)
 
-        # TODO с помощью менеджера контакста и метода assertRaises проверить корректность вызываемой ошибки
+
+        with self.assertRaises(TypeError):
+            invalide_node = "invalide_node"
+            Node.is_valid(invalide_node)
