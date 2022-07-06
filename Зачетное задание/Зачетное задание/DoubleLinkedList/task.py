@@ -1,8 +1,8 @@
 from typing import Any, Iterable, Optional
+from collections.abc import MutableSequence
 
-from node import Node,DoubleLinkedNode
-class MutableSequence:
-    pass
+from node import Node, DoubleLinkedNode
+
 class LinkedList(MutableSequence):
     def __init__(self, data: Iterable = None):
         """Конструктор связного списка"""
@@ -33,7 +33,7 @@ class LinkedList(MutableSequence):
         if not isinstance(index, int):
             raise TypeError()
 
-        if not 0 <= index < self.len:  # для for
+        if not 0 <= index < self.len:
             raise IndexError()
 
         current_node = self.head
@@ -62,12 +62,6 @@ class LinkedList(MutableSequence):
         node = self.step_by_step_on_nodes(index)
         node.value = value
 
-
-
-
-
-#import collections.abc
-
     def __delitem__(self, key):
         temp = self.head
 
@@ -78,7 +72,7 @@ class LinkedList(MutableSequence):
                 return
 
         while (temp is not None):
-            if temp.data == key:
+            if temp.value == key:
                 break
             prev = temp
             temp = temp.next
@@ -88,7 +82,7 @@ class LinkedList(MutableSequence):
 
         prev.next = temp.next
 
-        temp = None
+        temp.next = None
 
 
     # def delete(self, value):
@@ -207,8 +201,8 @@ def insertAtPos(self, pos, item):
         self.len += 1
 
 class DoubleLinkedList(LinkedList):
-    def __init__(self, head, tail):
-        super(DoubleLinkedList, self).__init__()
+    def __init__(self):
+        super().__init__()
 
 
     def append(self, value: Any):
@@ -224,12 +218,31 @@ class DoubleLinkedList(LinkedList):
         self.len += 1
 
 
-if __name__ == "__main__":
-    ll = DoubleLinkedList([1, 2, 3, 4, 5])
-
-    ll.clear()
-
-    print(ll)
+# if __name__ == "__main__":
+#     ll = DoubleLinkedList([1, 2, 3, 4, 5])
+#
+#     ll.clear()
+#
+#     print(ll)
 
 #Sequence.register(D)
 
+# def append_item(self, value):
+#     # Append an item
+#     new_item = Node(value, None, None)
+#     if self.head is None:
+#         self.head = new_item
+#         self.tail = self.head
+#     else:
+#         new_item.prev = self.tail
+#         self.tail.next = new_item
+#         self.tail = new_item
+#     self.count += 1
+#
+# def iter(self):
+#     # Iterate the list
+#     current = self.head
+#     while current:
+#         item_val = current.value
+#         current = current.next
+#         yield item_val
