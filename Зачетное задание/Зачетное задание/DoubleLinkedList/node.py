@@ -16,7 +16,7 @@ class Node:
     @next_.setter
     def prev(self, prev: Optional["Node"]):
         self.is_valid(prev)
-        self._next = next_
+!        self._next = next_
 
     def __repr__(self) -> str:
         return f"Node({self.value}, {None})" if self._next is None else f"Node({self.value}, Node({self._next}))"
