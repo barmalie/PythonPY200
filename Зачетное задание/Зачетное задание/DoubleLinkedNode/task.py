@@ -10,12 +10,12 @@ class Node:
         self.set_next(next_)
 
     @property
-    def next_(self):
+    def next(self):
         return self._next
 
-    @next_.setter
-    def prev(self, prev: Optional["Node"]):
-        self.is_valid(prev)
+    @next.setter
+    def next(self, next_: Optional["Node"]):
+        self.is_valid(next_)
         self._next = next_
 
     def __repr__(self) -> str:

@@ -1,8 +1,9 @@
 from typing import Any, Iterable, Optional
 
-from node import Node
-
-class LinkedList:
+from node import Node,DoubleLinkedNode
+class MutableSequence:
+    pass
+class LinkedList(MutableSequence):
     def __init__(self, data: Iterable = None):
         """Конструктор связного списка"""
         self.len = 0
@@ -61,8 +62,65 @@ class LinkedList:
         node = self.step_by_step_on_nodes(index)
         node.value = value
 
-    def to_list(self) -> list:
-        return [linked_list_value for linked_list_value in self]
+
+
+
+
+#import collections.abc
+
+    def __delitem__(self, key):
+        temp = self.head
+
+        if (temp is not None):
+            if (temp.value == key):
+                self.head = temp.next
+                temp = None
+                return
+
+        while (temp is not None):
+            if temp.data == key:
+                break
+            prev = temp
+            temp = temp.next
+
+        if (temp == None):
+            return
+
+        prev.next = temp.next
+
+        temp = None
+
+
+    # def delete(self, value):
+    #     # Delete a specific item
+    #     current = self.head
+    #     node_deleted = False
+    #     if current is None:
+    #         node_deleted = False
+    #
+    #     elif current.value == value:
+    #         self.head = current.next
+    #         self.head.prev = None
+    #         node_deleted = True
+    #
+    #     elif self.tail.value == value:
+    #         self.tail = self.tail.prev
+    #         self.tail.next = None
+    #         node_deleted = True
+    #
+    #     else:
+    #         while current:
+    #             if current.value == value:
+    #                 current.prev.next = current.next
+    #                 current.next.prev = current.prev
+    #                 node_deleted = True
+    #             current = current.next
+    #
+    #     if node_deleted:
+    #         self.count -= 1
+
+    def __len__(self):
+        return len(self.elements)
 
     def __repr__(self) -> str:
         return f"{self.__class__.__name__}({self.to_list()})"
@@ -70,12 +128,88 @@ class LinkedList:
     def __str__(self) -> str:
         return f"{self.to_list()}"
 
+# class Node:
+#     def __init__(self,initdata):
+#         self.data = initdata
+#         self.next = None
+#
+#     def getData(self):
+#         return self.data
+#
+#     def getNext(self):
+#         return self.next
+#
+#     def setData(self,newdata):
+#         self.data = newdata
+#
+#     def setNext(self,newnext):
+#         self.next = newnext
+#
+# class UnorderedList:
+#
+#     def __init__(self):
+#         self.head = None
+#         self.count = 0
+
+    # def append(self,item):
+    #     current = self.head
+    #     while current.getNext() != None:
+    #         current = current.getNext()
+    #     current.setNext(Node(item))
+    def inser_at_beginning(self, item):
+        new_Node = Node(item)
+        new_Node.value(item)
+        if self.len() == 0:
+            self.head = new_Node
+        else:
+            new_Node.set_next(self.head)
+            self.head = new_Node
+#Method to insert at the end
+
+def insertAtEnd(self, item):
+    new_Node = Node(item)
+    new_Node.setdata(item)
+    current = self.head
+    while current.getnext() != None:
+        current = current.getnext()
+    current.setnext(new_Node)
+#Method to insert at the specified position
+
+def insertAtPos(self, pos, item):
+    if pos > self.listLength() or pos < 0:
+        return None
+    if pos == 0:
+        self.inserAtBeginning(item)
+    else:
+        if pos == self.listLength():
+            self.insertAtEnd(item)
+        else:
+            newNode = Node(item)
+            newNode.setdata(item)
+            current = self.head
+            count = 0
+            while count < pos - 1:
+                count += 1
+                current = current.getnext()
+            newNode.setnext(current.getnext())
+            current.setnext(newNode)
+
+    def append(self, value: Any):
+        """ Добавление элемента в конец связного списка. """
+        append_node = Node(value)
+
+        if self.head is None:
+            self.head = self.tail = append_node
+        else:
+            self.linked_nodes(self.tail, append_node)
+            self.tail = append_node
+
+        self.len += 1
 
 class DoubleLinkedList(LinkedList):
-    @staticmethod
-    def linked_nodes(left_node: DoubleLinkedNode, right_node: Optional[DoubleLinkedNode] = None) -> None:
-        left_node.next = right_node
-        right_node.prev = left_node
+    def __init__(self, head, tail):
+        super(DoubleLinkedList, self).__init__()
+
 
     def append(self, value: Any):
         """ Добавление элемента в конец связного списка. """
@@ -96,3 +230,6 @@ if __name__ == "__main__":
     ll.clear()
 
     print(ll)
+
+#Sequence.register(D)
+
