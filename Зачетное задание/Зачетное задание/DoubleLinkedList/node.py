@@ -10,13 +10,13 @@ class Node:
         self.set_next(next_)
 
     @property
-    def next_(self):
+    def next(self):
         return self._next
 
-    @next_.setter
-    def prev(self, prev: Optional["Node"]):
-        self.is_valid(prev)
-!        self._next = next_
+    @next.setter
+    def next(self, next_: Optional["Node"]):
+        self.is_valid(next_)
+        self._next = next_
 
     def __repr__(self) -> str:
         return f"Node({self.value}, {None})" if self._next is None else f"Node({self.value}, Node({self._next}))"
@@ -47,6 +47,7 @@ class DoubleLinkedNode(Node):
     def __repr__(self, prev) -> str:
         next_prev = None if self.prev is None else f"DoubleLinkedNode({self.prev})"
         next_repr = None if self.next is None else f"DoubleLinkedNode({self.next})"
+
         return f"DoubleLinkedNode({self.value}, {next_prev}, {next_repr})"
     def __str__(self) -> str:
         return str(self.value)

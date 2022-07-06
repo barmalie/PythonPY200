@@ -1,4 +1,5 @@
 from typing import Any, Iterable, Optional
+import sys
 from collections.abc import MutableSequence
 
 from node import Node, DoubleLinkedNode
@@ -43,14 +44,9 @@ class LinkedList(MutableSequence):
         return current_node
 
     @staticmethod
-    def linked_nodes(left_node: Node, right_node: Optional[Node] = None) -> None:
-        """
-        Функция, которая связывает между собой два узла.
-
-        :param left_node: Левый или предыдущий узел
-        :param right_node: Правый или следующий узел
-        """
-        left_node.set_next(right_node)
+    def linked_nodes(left_node: DoubleLinkedNode, right_node: Optional[DoubleLinkedNode] = None) -> None:
+        left_node.next = right_node
+        right_node.prev = left_node
 
     def __getitem__(self, index: int) -> Any:
         """ Метод возвращает значение узла по указанному индексу. """
@@ -160,33 +156,33 @@ class LinkedList(MutableSequence):
             self.head = new_Node
 #Method to insert at the end
 
-def insertAtEnd(self, item):
-    new_Node = Node(item)
-    new_Node.setdata(item)
-    current = self.head
-    while current.getnext() != None:
-        current = current.getnext()
-    current.setnext(new_Node)
-#Method to insert at the specified position
+    def insertAtEnd(self, item):
+        new_Node = Node(item)
+        new_Node.setdata(item)
+        current = self.head
+        while current.getnext() != None:
+            current = current.getnext()
+        current.setnext(new_Node)
+    #Method to insert at the specified position
 
-def insertAtPos(self, pos, item):
-    if pos > self.listLength() or pos < 0:
-        return None
-    if pos == 0:
-        self.inserAtBeginning(item)
-    else:
-        if pos == self.listLength():
-            self.insertAtEnd(item)
+    def insertAtPos(self, pos, item):
+        if pos > self.listLength() or pos < 0:
+            return None
+        if pos == 0:
+            self.inserAtBeginning(item)
         else:
-            newNode = Node(item)
-            newNode.setdata(item)
-            current = self.head
-            count = 0
-            while count < pos - 1:
-                count += 1
-                current = current.getnext()
-            newNode.setnext(current.getnext())
-            current.setnext(newNode)
+            if pos == self.listLength():
+                self.insertAtEnd(item)
+            else:
+                newNode = Node(item)
+                newNode.setdata(item)
+                current = self.head
+                count = 0
+                while count < pos - 1:
+                    count += 1
+                    current = current.getnext()
+                newNode.setnext(current.getnext())
+                current.setnext(newNode)
 
     def append(self, value: Any):
         """ Добавление элемента в конец связного списка. """
@@ -200,30 +196,33 @@ def insertAtPos(self, pos, item):
 
         self.len += 1
 
+
+
+
+
 class DoubleLinkedList(LinkedList):
-    def __init__(self):
+    def __init__(selfself):
         super().__init__()
+        node_class = DoubleLinkedNode
+
+    @staticmethod
+    def linked_nodes(left_node: DoubleLinkedNode, right_node: Optional[DoubleLinkedNode] = None) -> None:
+        left_node.next = right_node
+        right_node.prev = left_node
 
 
-    def append(self, value: Any):
-        """ Добавление элемента в конец связного списка. """
-        append_node = DoubleLinkedNode(value)
+#ll = DoubleLinkedList([1, 2, 3, 4, 5])
+ll = DoubleLinkedList()
+print("Количество ссылок на первый узел:", sys.getrefcount(ll.head))
 
-        if self.head is None:
-            self.head = self.tail = append_node
-        else:
-            self.linked_nodes(self.tail, append_node)
-            self.tail = append_node
+ll.print_ref_count()
 
-        self.len += 1
+#if __name__ == "__main__":
+ll = DoubleLinkedList([1, 2, 3, 4, 5])
 
+#ll.clear()
 
-# if __name__ == "__main__":
-#     ll = DoubleLinkedList([1, 2, 3, 4, 5])
-#
-#     ll.clear()
-#
-#     print(ll)
+print(ll)
 
 #Sequence.register(D)
 
