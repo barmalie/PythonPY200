@@ -105,3 +105,11 @@ class LinkedList(MutableSequence):
                 self.start = new_node
 
             where._last = new_node
+
+ll = LinkedList(range(1, 5))
+print(*ll)
+
+print(*reversed(ll))
+
+ll.insert(2, 'foo')
+print(*ll)
